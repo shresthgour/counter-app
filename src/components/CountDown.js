@@ -2,7 +2,7 @@ import React from 'react';
 const { useState, useEffect, useRef } = React;
 
 const CountDown = () => {
-  const [count, setCount] = useState(10);
+  const [count, setCount] = useState();
   let cntVal = useRef();
 
   const handleChange = e => {
@@ -46,7 +46,7 @@ const CountDown = () => {
         </div>
         <div className="flex mt-10 mb-4 items-center justify-center">
           <label htmlFor="name" className='text-xl'>Enter a Number: </label>
-          <input className='border border-black ml-2 p-2 rounded-lg text-xl' type="text" name="cntDown" ref={cntVal} id="cntDown" onChange={handleChange} />
+          <input type="number" className='border border-black ml-2 p-2 rounded-lg text-xl'  name="cntDown" ref={cntVal} id="cntDown" onChange={handleChange} max='1000' />
         </div>
         <div className="flex justify-center">
           <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={handleSubmit}>
